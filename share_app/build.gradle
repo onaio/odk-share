@@ -3,6 +3,8 @@ apply from: '../config/quality.gradle'
 
 android {
     compileSdkVersion 27
+    buildToolsVersion "28.0.3"
+
     defaultConfig {
         applicationId "org.odk.share"
         minSdkVersion 16
