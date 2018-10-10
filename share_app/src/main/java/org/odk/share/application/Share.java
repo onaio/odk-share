@@ -28,7 +28,7 @@ public class Share extends DaggerApplication {
         return singleton;
     }
 
-    public static final String ODK_ROOT = Environment.getExternalStorageDirectory() + File.separator + "share";
+    public static final String ODK_ROOT = Environment.getExternalStorageDirectory() + File.separator + "odk";
     public static final String ODK_COLLECT_ROOT = Environment.getExternalStorageDirectory() + File.separator + "odk";
     public static final String FORMS_DIR_NAME = "forms";
     public static final String INSTANCES_DIR_NAME = "instances";
