@@ -15,6 +15,9 @@ import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
 import timber.log.Timber;
 
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
+
 /**
  * Created by laksh on 5/19/2018.
  */
@@ -51,6 +54,7 @@ public class Share extends DaggerApplication {
         } catch (JobManagerCreateException e) {
             Timber.e(e);
         }
+        Fabric.with(this, new Crashlytics());
     }
 
     public AppComponent getAppComponent() {
