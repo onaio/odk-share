@@ -27,5 +27,11 @@
             android:title="@string/title_odk_destination_dir"
             android:key="odk_destination_dir" />
 
+        <EditTextPreference
+            android:defaultValue="@string/default_submission_filter"
+            android:summary="@string/default_submission_filter"
+            android:title="@string/title_submission_filter"
+            android:key="submission_filter" />
+
     </PreferenceCategory>
 </PreferenceScreen>

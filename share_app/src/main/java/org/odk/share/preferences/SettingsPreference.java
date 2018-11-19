@@ -28,6 +28,7 @@ public class SettingsPreference extends PreferenceActivity {
     EditTextPreference hotspotPasswordPreference;
     CheckBoxPreference passwordRequirePreference;
     EditTextPreference odkDestinationDirPreference;
+    EditTextPreference submissionFilterPreference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,7 @@ public class SettingsPreference extends PreferenceActivity {
         hotspotPasswordPreference = (EditTextPreference) findPreference(PreferenceKeys.KEY_HOTSPOT_PASSWORD);
         passwordRequirePreference = (CheckBoxPreference) findPreference(PreferenceKeys.KEY_HOTSPOT_PWD_REQUIRE);
         odkDestinationDirPreference = (EditTextPreference) findPreference(PreferenceKeys.KEY_ODK_DESTINATION_DIR);
+        submissionFilterPreference = (EditTextPreference) findPreference(PreferenceKeys.KEY_SUBMISSION_FILTER);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
@@ -63,6 +65,8 @@ public class SettingsPreference extends PreferenceActivity {
         boolean isPasswordSet = prefs.getBoolean(PreferenceKeys.KEY_HOTSPOT_PWD_REQUIRE, false);
         odkDestinationDirPreference.setSummary(prefs.getString(PreferenceKeys.KEY_ODK_DESTINATION_DIR,
                 getString(R.string.default_odk_destination_dir)));
+        submissionFilterPreference.setSummary(prefs.getString(PreferenceKeys.KEY_SUBMISSION_FILTER,
+                getString(R.string.default_submission_filter)));
 
         hotspotPasswordPreference.setEnabled(isPasswordSet);
         passwordRequirePreference.setChecked(isPasswordSet);
@@ -71,6 +75,7 @@ public class SettingsPreference extends PreferenceActivity {
         hotspotPasswordPreference.setOnPreferenceChangeListener(preferenceChangeListener());
         passwordRequirePreference.setOnPreferenceChangeListener(preferenceChangeListener());
         odkDestinationDirPreference.setOnPreferenceChangeListener(preferenceChangeListener());
+        submissionFilterPreference.setOnPreferenceChangeListener(preferenceChangeListener());
     }
 
     private Preference.OnPreferenceChangeListener preferenceChangeListener() {
@@ -106,6 +111,9 @@ public class SettingsPreference extends PreferenceActivity {
                     } else {
                         odkDestinationDirPreference.setSummary(dir);
                     }
+                    break;
+                case PreferenceKeys.KEY_SUBMISSION_FILTER:
+                    submissionFilterPreference.setSummary(newValue.toString());
                     break;
             }
             return true;
