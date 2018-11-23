@@ -116,7 +116,8 @@
     <string name="rejected">Rejected</string>
     <string name="feedback_sent">\nFeedback sent by reviewer: %s</string>
     <string name="no_feedback_sent">\nNo feedback sent by the reviewer</string>
-    <string name="default_odk_destination_dir">\/sdcard\/odk</string>
+    <string name="default_odk_destination_dir">\/sdcard\/mspray</string>
+    <string name="default_submission_filter">- HH -</string>
     <string name="title_odk_destination_dir">ODK Destination Directory</string>
     <string name="odk_destination_dir_error">The destination should not be empty</string>
     <string name="title_submission_filter">Submission Filter Text</string>
